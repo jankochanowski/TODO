@@ -11,7 +11,8 @@
      
             font-family: 'Helvetica', sans-serif;
 
-            line-height: 1.4;}
+            line-height: 1.4;
+            margin:20px;}
             
             
         .tdontda-image-box {
@@ -57,7 +58,52 @@
         color:white;
         font-size:16px;
         }
+        .tdontda-panel__button{
+          background-color: white;
+            color: #3B3F5C;
+             border-radius: 20px;
+            border: 1px solid #555555;
+            padding: 4px 15px;
+            text-align: center;
+            
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .tdontda-panel__button:hover {
+            background-color: #3B3F5C;
+            color: white;
+        }
+        input{
+        padding-left:5px;
+        padding-right:5px;}
         
+        
+        .tdontda-panel__task-list {
+        text-align:left;
+        margin:12px;
+       
+        }
+        
+        .tdontda-panel__task-list--task{
+        color:white;
+        font-size:14px;
+        font-weight:bold;}
+        
+        .tdontda-panel__task-list--task-desc {
+        color: #3B3F5C;
+        border-radius: 20px;
+        padding-left:10px;
+        padding-right:10px;
+            border: 1px solid white;
+            font-size:13px;
+        
+        }
         
         </style>
     
@@ -69,6 +115,27 @@
     <p><em class="tdontda-panel__doubts">✔ Feel embarrassed about making<br>TO DO LIST for portfolio?<br>
     ✔ Suffer from chronic procrastination?<br>✔ Have doubts about doing sth?</em><br><br>
  <span class="tdontda-panel__let-hamlet">Let <strong>Hamlet</strong> decide for you.</span></p>
+ <br>
+ <p class="tdontda-panel__doubts"> Add a new item: </p>
+ <input placeholder="What do you need to do?">
+ <button class="tdontda-panel__button">Add</button>
+ <div class="tdontda-panel__task-list">
+ 
+ 
+ <table width="100%" align="center">
+  
+  <tr>
+    <td class="tdontda-panel__task-list--task">Task 1:</td> 
+    <td class="tdontda-panel__task-list--task-desc"> Lorem ipsum dolor</td> <td class="tdontda-panel__task-list--task">x</td> 
+  </tr>
+ 
+  <tr>
+    <td class="tdontda-panel__task-list--task">Task 2:</td> 
+    <td class="tdontda-panel__task-list--task-desc"> Stabat mater dolorosa </td> <td class="tdontda-panel__task-list--task">x</td> 
+  </tr>
+ 
+ 
+ </div>
     </div>
 
 </body>
