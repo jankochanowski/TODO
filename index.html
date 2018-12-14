@@ -216,7 +216,7 @@
  <br>
  <p class="tdontda-panel__doubts"> Add new item: </p>
  <input placeholder="What do you need to do?">
- <button class="tdontda-panel__button">Add</button>
+ <button class="tdontda-panel__button" id="add-button">Add</button>
  <div class="tdontda-panel__task-list">
  
  
@@ -235,13 +235,35 @@
 
  </div>
  <br>
- <button class="tdontda-random-answer"> Random answer
- </button>
+ <button class="tdontda-random-answer" id="prince-hamlet"> Ask Prince Hamlet</button>
 
     </div>
 
 </body>
+	
+	<script>
+		
+        var button = document.getElementById("prince-hamlet");
+        var clicker = function() {
+            alert("Not ready yet!");
+            }
+        
+            button.addEventListener("click", clicker);
+            
+            
+            
+            var butt = document.getElementById("add-button");
+        var click = function() {
+            alert("Not ready yet!");
+            }
+        
+            butt.addEventListener("click", clicker);
+            
+            
+        
+		</script>
 </html>
+
 
 
 
