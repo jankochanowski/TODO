@@ -235,7 +235,7 @@ padding-right:5px;
  <span class="tdontda-panel__let-hamlet"><em><strong>„To do or not to do?”</strong></em> <br>Let <strong>Hamlet</strong> decide for you.</span></p>
  <br>
  <p class="tdontda-panel__doubts"> Add new item: </p>
- <input id="dupa" placeholder="What do you need to do?">
+ <input id="inputid" placeholder="What do you need to do?">
  <button onclick="newEl()" class="tdontda-panel__button" id="add-button">Add</button>
  <div class="tdontda-panel__task-list">
  
@@ -305,7 +305,7 @@ list.addEventListener('click', function(ev) {
 
          function newEl() {
   var li = document.createElement("li");
-  var inputValue = document.getElementById("dupa").value;
+  var inputValue = document.getElementById("inputid").value;
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
@@ -313,7 +313,7 @@ list.addEventListener('click', function(ev) {
   } else {
     document.getElementById("myUL").appendChild(li);
   }
-  document.getElementById("dupa").value = "";
+  document.getElementById("inputid").value = "";
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
