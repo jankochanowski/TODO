@@ -97,17 +97,8 @@
         font-size:14px;
         font-weight:bold;}
         
-        .tdontda-panel__task-list--task-desc {
-        color: #3B3F5C;
-        border-radius: 10px;
-        padding-left:10px;
-        padding-right:10px;
-            border: 1px solid white;
-            font-size:12px;
-            font-weight:bold;
-         
-        
-        }
+        .tdontda-panel__task-list--task-desc 
+       
         .tdontda-random-answer:hover {
             background-color: #3B3F5C;
             color: white;
@@ -202,6 +193,35 @@
   }
 }
 
+li {
+width:90%;
+ color: #3B3F5C;
+      
+            font-size:12px;
+            font-weight:bold;
+         
+        
+        }
+
+
+.close {
+
+  right: 0;
+  top: 0;
+padding-left:5px;
+padding-right:5px;
+
+  color:white;
+        font-size:14px;
+        font-weight:bold;
+}
+
+.close:hover {
+  background-color: #3B3F5C;
+  border-radius:10px;
+  color: white;
+  cursor: pointer; 
+}
         
         </style>
     
@@ -210,28 +230,27 @@
 
 <div class="tdontda-image-box"><img class="tdontda-image" src="https://jankochanowski.github.io/hamletbanner1.jpg"></div>
     <div class="tdontda-panel">
-    <p><em class="tdontda-panel__doubts">✔ Feel embarrassed about making<br>TO DO LIST for portfolio?<br>
+    <p><em class="tdontda-panel__doubts">✔ Not certain if sth is a good idea?<br>
     ✔ Suffer from chronic procrastination?<br>✔ Have doubts about doing sth?</em><br><br>
  <span class="tdontda-panel__let-hamlet"><em><strong>„To do or not to do?”</strong></em> <br>Let <strong>Hamlet</strong> decide for you.</span></p>
  <br>
  <p class="tdontda-panel__doubts"> Add new item: </p>
- <input placeholder="What do you need to do?">
- <button class="tdontda-panel__button" id="add-button">Add</button>
+ <input id="dupa" placeholder="What do you need to do?">
+ <button onclick="newEl()" class="tdontda-panel__button" id="add-button">Add</button>
  <div class="tdontda-panel__task-list">
  
- 
- <table width="100%" align="center">
+
+ <ol id="myUL">
+  <li class="tdontda-panel__task-list--task-desc">Lorem ipsum dolor</li>
+  <li class="checked tdontda-panel__task-list--task-desc">Stabat mater dolorosa</li>
   
-  <tr>
-    <td class="tdontda-panel__task-list--task">Task 1:</td> 
-    <td class="tdontda-panel__task-list--task-desc"> Lorem ipsum dolor</td> <td class="tdontda-panel__task-list--task">x</td> 
-  </tr>
  
-  <tr>
-    <td class="tdontda-panel__task-list--task">Task 2:</td> 
-    <td class="tdontda-panel__task-list--task-desc"> Stabat mater dolorosa </td> <td class="tdontda-panel__task-list--task">x</td> 
-  </tr>
-  </table>
+</ol>
+
+
+ 
+ 
+ 
 
  </div>
  <br>
@@ -245,24 +264,74 @@
 		
         var button = document.getElementById("prince-hamlet");
         var clicker = function() {
-            alert("Not ready yet!");
+            alert("Ekhmmmmmmm...\nThere rest is silence.\n\n\n_______________\n***This app is only a parody of TODO list in portfolios");
             }
         
             button.addEventListener("click", clicker);
             
             
             
-            var butt = document.getElementById("add-button");
-        var click = function() {
-            alert("Not ready yet!");
-            }
-        
-            butt.addEventListener("click", clicker);
+           
             
             
+            
+            var myTodolist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myTodolist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("x");
+  span.className = "close";
+  span.appendChild(txt);
+  myTodolist[i].appendChild(span);
+}
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+
+         function newEl() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("dupa").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("The input field is empty!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("dupa").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}   
         
 		</script>
 </html>
+
 
 
 
